@@ -9,6 +9,11 @@
 
 ✔️ Linux (In Theory)
 
+## Direct Run
+- Install [Python](https://www.python.org/)
+- Run file
+- Profit
+
 ## Self Compilation
 - Install [Python](https://www.python.org/)
 - Install [PyInstaller](https://pyinstaller.org/en/stable/)
@@ -16,8 +21,3 @@
 - Run `pyinstaller --onefile generateStudentRubrics.py`
 - Grab the `.exe` from the `dist` folder
 - Discard everything else it creates
-
-## Direct Run
-- Install [Python](https://www.python.org/)
-- Run file
-- Profit
