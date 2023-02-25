@@ -13,7 +13,7 @@
 - Install [Python](https://www.python.org/)
 - Install [PyInstaller](https://pyinstaller.org/en/stable/)
 - (Optional) Download [UPX](https://upx.github.io/)
-- Run `pyinstaller --onefile ConsoleBuddy.py`
+- Run `pyinstaller --onefile generateStudentRubrics.py`
 - Grab the `.exe` from the `dist` folder
 - Discard everything else it creates
 
