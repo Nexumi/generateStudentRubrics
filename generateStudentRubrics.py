@@ -1,7 +1,8 @@
 import ssl
+from sys import argv
 from shutil import copy2
 from urllib.request import urlopen, urlretrieve
-from os import mkdir, chdir, remove, system, name
+from os import mkdir, chdir, remove, system, name, path
 
 def clear():
     if name == "nt":
@@ -44,7 +45,6 @@ def namelist():
                     sections[grader].append(student)
                 else:
                     sections[grader] = [student]
-    data.close()
     return sections[choice([i for i in sections.keys()])]
 
 
@@ -53,7 +53,6 @@ def assignments():
     rubrics = []
     for info in data:
         rubrics.append(info.decode("utf-8").replace("\n", ""))
-    data.close()
     return choice(rubrics)
                 
 def generate(assignment, names):
@@ -61,15 +60,20 @@ def generate(assignment, names):
     mkdir(folder)
     chdir(folder)
     urlretrieve("https://jpweb.ml/grader-rubrics/" + assignment, assignment)
-    for sname in names:
-        copy2(assignment, sname + "-" + assignment)
+    for name in names:
+        copy2(assignment, name + "-" + assignment)
     remove(assignment)
 
 if name != "nt":
     ssl._create_default_https_context = ssl._create_unverified_context
+    try:
+        chdir(path.sep.join(argv[0].split(path.sep)[:-1]))
+    except:
+        pass
 a = assignments()
 n = namelist()
 generate(a, n)
 clear()
 print("Rubrics generated!")
-input("Press enter to close...")
+if name == "nt":
+    input("Press enter to close...")
