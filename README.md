@@ -5,13 +5,13 @@
 ## Support
 ✔️ Windows
 
-✔️ MacOS (Direct Run only)
+✔️ MacOS
 
 ✔️ Linux (In Theory)
 
 ## Direct Run
 - Install [Python](https://www.python.org/)
-- Run file
+- Run `py` file
 - Profit
 
 ## Self Compilation
